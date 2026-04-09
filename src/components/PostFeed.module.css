@@ -6,8 +6,10 @@
     padding: 1rem;
 }
 
-.searchbox{
-    width: 500px;
+.searchbox {
+    width: 100%;
+    max-width: 600px;
+    min-width: 200px;
     height: 3em;
     border-radius: 15cm;
 }

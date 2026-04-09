@@ -18,11 +18,11 @@ export default function PostForm(props) {
             <form action={action} noValidate>
                 <div>
                     <label htmlFor="title">Title</label>
-                    <input id="title" name="title" defaultValue={state?.data?.title} /> {/* Titel-Eingabe */}
+                    <input id="title" name="title" placeholder="Titel..." defaultValue={state?.data?.title} /> {/* Titel-Eingabe */}
                 </div>
                 <div>
                     <label htmlFor="text">Text</label>
-                    <textarea id="text" name="text" defaultValue={state?.data?.text} /> {/* Text-Eingabe */}
+                    <textarea id="text" name="text" placeholder="Text..." defaultValue={state?.data?.text} /> {/* Text-Eingabe */}
                 </div>
                 <button className={"button"} disabled={pending} type="submit">
                     Post

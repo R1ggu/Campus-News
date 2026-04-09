@@ -4,6 +4,7 @@ import { z } from "zod"
 import UsersApi from "@/lib/api/Users"
 import { createSession, verifySession, deleteSession } from "@/lib/session"
 import { redirect } from "next/navigation"
+import { refresh } from "next/cache"
 
 // Schema für Login
 const schema = z.object({
