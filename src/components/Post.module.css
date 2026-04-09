@@ -1,0 +1,53 @@
+.postTitle {
+    margin: 2.5rem 0 1rem 0;
+    font-weight: bold;
+}
+
+.post {
+    flex: 1 0 calc(33% - 1rem);
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-background-light);
+    border-radius: 0.3rem;
+    box-shadow: 0 1px 6px 0 rgb(0 0 0 / 20%);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+}
+
+.postLink {
+    font-style: italic;
+    color: var(--color-accent);
+    margin-left: 15px;
+}
+
+.linkIcon{
+    position: absolute;
+    right: 20px;
+}
+
+.postAuthor {
+    font-size: 0.8rem;
+    color: var(--color-caracter);
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1280px) {
+    .post {
+        flex: 1 0 calc(50% - 1rem);
+    } 
+}
+
+@media screen and (max-width: 768px) {
+    .post {
+        flex: 1 0 calc(100% - 1rem);
+    } 
+}

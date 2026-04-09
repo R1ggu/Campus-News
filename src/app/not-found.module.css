@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: #172A46;
+    color: #e6edf3;
+    padding: 2rem;
+}
+
+.image {
+    width: 1000px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 1.5rem auto;
+    border: 2px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.title {
+    font-size: 4rem;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.text {
+    font-size: 1rem;
+    max-width: 600px;
+    margin: 0;
+}

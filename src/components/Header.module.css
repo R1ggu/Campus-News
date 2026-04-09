@@ -1,0 +1,24 @@
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 10px 10px 0 rgb(0 0 0 / 20%);
+    display: flex;
+    z-index: 99;
+    flex-direction: row;
+    height: 96px;
+    line-height: 96px;
+    background-color: var(--color-background-dark);
+}
+
+.header_image {
+    padding-top: 18px;
+    margin-left: 30px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    cursor: pointer;
+}
+
+.header_image:hover {
+    transform: scale(1.05);
+    opacity: 0.85;
+}

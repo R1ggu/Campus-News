@@ -1,0 +1,13 @@
+.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.searchbox{
+    width: 500px;
+    height: 3em;
+    border-radius: 15cm;
+}
