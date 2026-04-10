@@ -1,11 +1,14 @@
 const BASE_URL = "http://localhost:3001";
+
+//"fetch()" sendet eine HTTP-Anfrage vom Front-End an das Back-End.
+
  
-// Zentrale Basis-URL für API-Aufrufe
+// Basis-URL des Backends
 async function handleResponse(response) {
     if (!response.ok) {
-        const error = new Error("Request failed with status " + response.status); // Fehlerobjekt mit Status erstellen
-        error.response = response; // Originale Response anhängen
-        throw error; // Fehler weitergeben
+        const error = new Error("Request failed with status " + response.status); // Fehlerobjekt mit Statuscode
+        error.response = response; // Originale Antwort mitgeben
+        throw error; // Fehler an Aufrufer weitergeben
     }
     return response.json();
 }
@@ -16,59 +19,59 @@ async function handleResponse(response) {
 /* GET */
 export async function getJSON(url, accessToken = null) {
     const options = {
-        method: "GET", // Daten abrufen
+        method: "GET", // Daten lesen
         headers: {
-            "content-type": "application/json", // JSON als Format
+            "content-type": "application/json", // Datenformat JSON
         },
     };
  
     if (accessToken) {
-        options.headers["Authorization"] = `Bearer ${accessToken}`; // Token für geschützte Routen
+        options.headers["Authorization"] = `Bearer ${accessToken}`; // Token fuer geschuetzte Anfrage
     }
  
-    const response = await fetch(url, options); // GET-Request senden
+    const response = await fetch(url, options); // Request ans Backend senden
     return handleResponse(response);
 }
  
 /* POST */
 export async function postJSON(url, body = {}, accessToken = null) {
     const options = {
-        method: "POST", // Neue Daten senden
+        method: "POST", // Neue Daten erstellen
         headers: {
             "content-type": "application/json",
         },
-        body: JSON.stringify(body), // Objekt in JSON umwandeln
+        body: JSON.stringify(body), // Request-Body in JSON umwandeln
     };
  
     if (accessToken) {
         options.headers["Authorization"] = `Bearer ${accessToken}`; // Token mitsenden
     }
  
-    const response = await fetch(url, options); // POST-Request senden
+    const response = await fetch(url, options); // Request ans Backend senden
     return handleResponse(response);
 }
  
 /* PUT */
 export async function putJSON(url, body = {}, accessToken = null) {
     const options = {
-        method: "PUT", // Bestehende Daten bearbeiten
+        method: "PUT", // Bestehende Daten aktualisieren
         headers: {
             "content-type": "application/json",
         },
-        body: JSON.stringify(body), // Neue Daten als JSON senden
+        body: JSON.stringify(body), // Neue Daten als JSON mitsenden
     };
  
     if (accessToken) {
         options.headers["Authorization"] = `Bearer ${accessToken}`; // Token mitsenden
     }
-    const response = await fetch(url, options); // PUT-Request senden
-    return handleResponse(response);
+    const response = await fetch(url, options); // Request ans Backend senden
+    return handleResponse(response);    
 }
  
 /* DELETE */
 export async function deleteJSON(url, accessToken = null) {
     const options = {
-        method: "DELETE", // Daten löschen
+        method: "DELETE", // Daten loeschen
         headers: {
             "content-type": "application/json",
         },
@@ -78,7 +81,7 @@ export async function deleteJSON(url, accessToken = null) {
         options.headers["Authorization"] = `Bearer ${accessToken}`; // Token mitsenden
     }
  
-    const response = await fetch(url, options); // DELETE-Request senden
+    const response = await fetch(url, options); // Request ans Backend senden
     return handleResponse(response);
 }
  

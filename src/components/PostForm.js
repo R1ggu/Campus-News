@@ -15,8 +15,10 @@ export default function PostForm(props) {
 
     return (
         <div className={styles['form-container-styling']}>
-            <form action={action} noValidate>
+            <form action={action} noValidate>   
+                
                 <div>
+                    <h2 id="tileidb">Create a new post</h2>
                     <label htmlFor="title">Title</label>
                     <input id="title" name="title" placeholder="Titel..." defaultValue={state?.data?.title} /> {/* Titel-Eingabe */}
                 </div>

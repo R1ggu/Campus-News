@@ -12,14 +12,15 @@ const schema = z.object({
     password: z.string().trim(),
 })
 
-// Schema für Register
-const registerSchema = z.object({
-    username: z.string().trim().min(1, "Please enter a username"),
-    email: z.string().trim().email("Please complete your email address"),
-    password: z.string().trim().min(1, "Please enter a password"),
-    confirmPassword: z.string().trim().min(1, "Please confirm your password"),
-})
 
+// "z" ist die zod Bibliotek
+// Schema für Register
+const registerSchema = z.object({ // Validierungsschema für das Register-Formular
+    username: z.string().trim().min(1, "Please enter a username"), // Muss Text sein, Leerzeichen aussen entfernen
+    email: z.string().trim().email("Please complete your email address"), // Muss Text sein, Leerzeichen aussen entfernen, gültiges E-Mail-Format
+    password: z.string().trim().min(1, "Please enter a password"), // Muss Text sein, Leerzeichen aussen entfernen
+    confirmPassword: z.string().trim().min(1).max(10, "Please confirm your password"), // Muss Text sein, Leerzeichen aussen entfernen
+})
 /**
 * Login function
 */

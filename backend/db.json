@@ -452,9 +452,9 @@
     },
     {
       "title": "Page Not Found",
-      "text": "This page seems to have wandered off into the digital void.",
+      "text": "This page seems to have wandered off into the digital void. genau!",
       "createdAt": "",
-      "updatedAt": "2026-04-09T09:25:03.641Z",
+      "updatedAt": "2026-04-10T10:16:43.885Z",
       "userId": "10",
       "username": "Eric",
       "id": "WGVRzh1"
@@ -558,6 +558,12 @@
       "password": "$2a$10$/NLZCpW/cxMQ5y1Uu3RYKeug6l2hTPlOvq2XMHsWR4y5ACJr6d5WC",
       "username": "Eric",
       "id": 10
+    },
+    {
+      "email": "ggigiggia@tux.giga",
+      "password": "$2a$10$5nc8ottxmyWiXdmFH.ehueAt.xmN2X/lC9A/HQYeEfhP1qREOoB4q",
+      "username": "GIGATUX",
+      "id": 11
     }
   ]
 }

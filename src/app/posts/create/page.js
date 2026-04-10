@@ -9,7 +9,6 @@ export default async function CreatePostPage() {
 
     return (
         <div>
-            <h1>Create a new post</h1>
             <PostForm />
         </div>
     );
