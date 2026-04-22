@@ -3,11 +3,12 @@ import { cookies } from "next/headers";
 import { decodeJwt } from "jose";
 
 /**
- * Checks if a valid session exists.
- * @returns a session object containing the  accessToken and its scope on success, `null` otherwise
+ * Prüft, ob eine gültige Session existiert.
+ * @returns Ein Session-Objekt mit accessToken und Benutzerdaten bei Erfolg, sonst `null`
  */
-// We only check if a cookie with a session  accessToken exists and if its contents can be decoded.
-// This means that we can cache the response, as we only need to perform this check once per page navigation.
+// Es wird nur geprüft, ob ein Cookie mit einem Session-accessToken existiert
+// und ob dessen Inhalt decodiert werden kann.
+// Dadurch kann die Antwort gecacht werden, weil diese Prüfung pro Seiten-Navigation nur einmal nötig ist.
 export const verifySession = cache(async () => {
     const cookieStore = await cookies();
     const accessToken = cookieStore.get("session")?.value;
@@ -22,18 +23,18 @@ export const verifySession = cache(async () => {
             email: claims.email,
             username: claims.username
         },
-        //scope: claims.scope.split(" "),     // Return the  accessToken (to perform API requests) and the scope claim (to perform optimistic auth checks).
+        //scope: claims.scope.split(" "),     // Gibt den accessToken (für API-Anfragen) und den Scope-Claim (für optimistische Auth-Prüfungen) zurück.
     };
 });
 
 /**
- * Creates a session by storing the specified  accessToken in a cookie.
- * @param {string}  accessToken - The session  accessToken
+ * Erstellt eine Session, indem der angegebene accessToken in einem Cookie gespeichert wird.
+ * @param {string} accessToken - Der Session-accessToken
  */
 export async function createSession(accessToken) {
     const cookieStore = await cookies();
 
-    // Store the session  accessToken in a "secure" cookie
+    // Speichert den Session-accessToken in einem "sicheren" Cookie
     cookieStore.set("session", accessToken, {
         httpOnly: true,
         secure: true,
@@ -44,7 +45,7 @@ export async function createSession(accessToken) {
 }
 
 /**
- * Invalidates an existing session, removing the corresponding cookie.
+ * Macht eine bestehende Session ungültig, indem das zugehörige Cookie entfernt wird.
  */
 export async function deleteSession() {
     const cookieStore = await cookies();
@@ -53,8 +54,8 @@ export async function deleteSession() {
 
 
 /**
- * Just a helper function to decode a JWT token.
- * @returns 
+ * Eine Hilfsfunktion, um ein JWT-Token zu decodieren.
+ * @returns Das decodierte Payload-Objekt oder `null` bei einem Fehler
  */
 export async function decodeJwtSelfmade(token) {
     try {

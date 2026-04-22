@@ -7,12 +7,13 @@ import styles from "./PostFeed.module.css"
 /**
  * Zeigt alle Posts an und filtert sie über die Suche
  */
-export function PostFeed({ posts }) {
+export default function PostFeed({ posts = [] }) {
     const [searchTerm, setSearchTerm] = useState("") // Speichert den Suchbegriff
 
     const filteredPosts = posts.filter((post) =>
         post.title.toLowerCase().includes(searchTerm.toLowerCase()) // Filtert nach Titel
     )
+
     return (
         <>
             <center>

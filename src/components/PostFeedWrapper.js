@@ -1,5 +1,5 @@
 import PostsAPI from "@/lib/api/Posts"
-import { PostFeed } from "./PostFeed"
+import PostFeed from "@/components/PostFeed"
 
 /**
  * Holt alle Posts und gibt sie an PostFeed weiter

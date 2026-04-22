@@ -64,8 +64,7 @@ export async function putJSON(url, body = {}, accessToken = null) {
     if (accessToken) {
         options.headers["Authorization"] = `Bearer ${accessToken}`; // Token mitsenden
     }
-    const response = await fetch(url, options); // Request ans Backend senden
-    return handleResponse(response);    
+    const response = await fetch(url, options); // Request ans Backen);    
 }
  
 /* DELETE */
